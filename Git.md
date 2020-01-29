@@ -1,4 +1,5 @@
 # Learning Git
+[Github](https://help.github.com/en/github/using-git)
 ## Example: Sync through Github
 1. Init Git:  
    ``git init``
