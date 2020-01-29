@@ -3,7 +3,7 @@
 1. Init Git:  
    ``git init``
 2. Add remote:
-   - First, make new repo on github;
+   - First, make new repo on github, without makefile save extra work;
    - Then, ``git remote add origin <git@github.com:....>``
 3. Push: default remote/branch name: origin/master
    
