@@ -1,5 +1,7 @@
 ## [`std :: istream_iterator`](http://www.cplusplus.com/reference/iterator/istream_iterator/)
+
 Example:
+
 ````c++
     // istream_iterator example
     #include <iostream>     // std::cin, std::cout
@@ -22,4 +24,5 @@ Example:
     return 0;
     }
 ````
-- They are constructed from a `basic_istream` object, to which they become associated, so that whenever `operator++ `is used on the iterator, it extracts an element from the stream (using `operator>>`).
+
+- They are constructed from a `basic_istream` object, to which they become associated, so that whenever `operator++` is used on the iterator, it extracts an element from the stream (using `operator>>`).
