@@ -26,3 +26,8 @@ Example:
 ````
 
 - They are constructed from a `basic_istream` object, to which they become associated, so that whenever `operator++` is used on the iterator, it extracts an element from the stream (using `operator>>`).
+
+## [Keyword `explicit`](https://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-mean)
+
+- Prefixing the explicit keyword to the constructor prevents the compiler from using that constructor for implicit conversions.
+
