@@ -34,6 +34,7 @@
   ``git merge <REMOTENAME> <BRANCHNAME>``
 - Fetching from a repository grabs all the new remote-tracking branches and tags without merging those changes into your own branches.
 ## `pull` 
+
 - `git pull` is a convenient shortcut for completing both git fetch and git mergein the same command:
 
   ``git pull <REMOTENAME> <BRANCHNAME>``
