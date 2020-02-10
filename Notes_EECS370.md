@@ -23,3 +23,19 @@ Symbol table: deals with globals(static)
 
 Relocation table: deals with call to memory
 - all symbolic address (both data and text), for load/store, branch.
+
+## [Compiler Explorer](https://godbolt.org/)
+---
+
+## caller save/ callee save
+---
+caller/ callee refer to registers, assign variables in function to caller/ callee save registers. caller/ callee save registers only need to be save to stack in certain situation. 
+- caller save: 
+    - save/load before/after calling another function. 
+    - look for live variables after function call i.e. assign variable before function call, refer to that variable value after.
+    - leaf function caller save used without saving/storing.
+
+- callee save:
+    - save/ load at beginning/end of a function. 
+    - only save/ load if the function overwrites the variable (register). 
+    - main() don't save to stack. 
