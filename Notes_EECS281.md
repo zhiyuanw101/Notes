@@ -32,3 +32,12 @@ Example:
 - Prefixing the explicit keyword to the constructor prevents the compiler from using that constructor for implicit conversions.
 
 ## [`bitset`](http://www.cplusplus.com/reference/bitset/bitset/)
+
+## `while(ptr)`
+- Watch out for invalid deference in edges:
+    ```c++
+   // ptr is nullptr?
+    while(ptr->next){
+        ...
+    }
+    ```
