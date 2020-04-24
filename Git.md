@@ -1,3 +1,4 @@
+#! https://zhuanlan.zhihu.com/p/130993136
 # Learning Git
 [Github](https://help.github.com/en/github/using-git)
 ## Example: Sync through Github
