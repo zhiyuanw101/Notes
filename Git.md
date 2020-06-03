@@ -39,7 +39,27 @@
 - `git pull` is a convenient shortcut for completing both git fetch and git mergein the same command:
 
   ``git pull <REMOTENAME> <BRANCHNAME>``
-
+# 基本操作
+## git add
+```bash
+$ git add .
+$ git add [file]
+```
+加入暂存库（缓存）
+## git status
+```bash
+$ git status -s #short version
+>> M Git.md    #red M modified not added, green added
+```
+## git diff
+配合status查看变化
+## git commit
+```bash
+$ git commit -m 'comments'
+$ git commit -a
+$ git commit -am 'comments' #合并add
+```
+提交修改到仓库/分支
 # Branches
 ## git branch [branch_name]
 new branch
