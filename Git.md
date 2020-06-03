@@ -39,3 +39,16 @@
 - `git pull` is a convenient shortcut for completing both git fetch and git mergein the same command:
 
   ``git pull <REMOTENAME> <BRANCHNAME>``
+
+# Branches
+## git branch [branch_name]
+new branch
+## git checkout [branch_name]
+goto that branch, * means which branch on
+### git checkout -b [branch_name]
+# 合并分支
+## git merge [branch]
+创造下一新节点，为以上两个共同连接，[branch] is not currently on
+当前* branch会向下一节点，指向源节点与[branch] 的节点
+## git rebase [branch]
+创造新结点，复制本节点修改，线性拼接到另一[branch]节点（只连接这一节点）
