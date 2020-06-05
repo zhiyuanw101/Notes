@@ -1,5 +1,8 @@
-# [Linux](https://cyc2018.github.io/CS-Notes/#/notes/Linux)
-
+#! https://zhuanlan.zhihu.com/p/146174030
+# 【Linux】
+参考：
+- [CS-Notes](https://cyc2018.github.io/CS-Notes/#/notes/Linux)
+- [菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
 ## VIM
 - 一般指令模式（Command mode）：VIM 的默认模式，可以用于移动游标查看内容；
     - h,j,k,l：左，下，上，右
@@ -211,3 +214,4 @@ $ declare [-aixr] variable
 |command >> file|执行command，追加写入file|
 
 ## 管道指令
+//TODO

@@ -1,4 +1,6 @@
-# 进程管理
+#! https://zhuanlan.zhihu.com/p/146173523
+# 【操作系统1】--进程管理
+主要参考：[CS-Notes](https://cyc2018.github.io/CS-Notes/)
 ## 进程与线程
 提高并发度
 ### 1. 进程（Process）

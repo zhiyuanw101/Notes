@@ -1,6 +1,9 @@
 #! https://zhuanlan.zhihu.com/p/130993136
-# Learning Git
-[Github](https://help.github.com/en/github/using-git)
+# 【Git】--基本使用
+参考：
+- [Github](https://help.github.com/en/github/using-git)
+- [廖雪峰Git](https://www.liaoxuefeng.com/wiki/896043488029600/896067008724000)
+- [菜鸟教程](https://www.runoob.com/git/git-basic-operations.html)
 ## Example: Sync through Github
 1. Init Git:  
    ``git init``

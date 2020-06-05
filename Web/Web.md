@@ -1,4 +1,5 @@
-# 网络知识
+#! https://zhuanlan.zhihu.com/p/146172945
+# 【计算机网络】
 ## 电路交换和分组交换
 ### 1. 电路交换 (Circuit switching)
 - 两个用户建立专用链路，通信时占用链路
@@ -60,7 +61,7 @@
 - 仅有双方彼此通信，不能用于广播
 - TCP 使用校验和，确认和重传机制来保证可靠传输
 #### 三次握手与四次挥手：
-https://hit-alibaba.github.io/interview/basic/network/TCP.html
+[参考：三次握手与四次挥手](https://hit-alibaba.github.io/interview/basic/network/TCP.html)
 - 三次握手：
     - 建立TCP连接，客户端和服务器共发送三个包
 - 四次挥手：

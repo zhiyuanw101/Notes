@@ -1,5 +1,5 @@
 #! https://zhuanlan.zhihu.com/p/136678571
-# Dynamic Programming
+# 【算法】--Dynamic Programming
 - 【最优子结构】每个阶段的最优状态可以从之前某个阶段的某个或某些状态直接得到 
     - 考虑所有之前阶段，所有状态
     - 压缩和并得到状态转移
