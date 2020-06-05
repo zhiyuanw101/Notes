@@ -40,35 +40,129 @@
 
   ``git pull <REMOTENAME> <BRANCHNAME>``
 # 基本操作
+git有三个区域：
+- Working Tree：工作区
+- Index/Stage：缓存区，add加入的
+- Repository：提交历史，commit修改的
 ## git add
 ```bash
 $ git add .
 $ git add [file]
 ```
-加入暂存库（缓存）
+加入暂存库/缓存(Index/Stage)
 ## git status
 ```bash
 $ git status -s #short version
 >> M Git.md    #red M modified not added, green added
 ```
 ## git diff
+```bash
+git diff HEAD -- [file]    #查看working tree和repository区别
+```
 配合status查看变化
 ## git commit
 ```bash
 $ git commit -m 'comments'
 $ git commit -a
-$ git commit -am 'comments' #合并add
+$ git commit -am 'comments'   #合并add
 ```
-提交修改到仓库/分支
+提交修改到仓库/分支(Repository)
+## git log
+```bash
+$ git log --pretty=oneline    #一行显示一次commit
+$ git log --oneline           #一行显示一次commit， 缩略
+$ git log --graph             #图显示
+```
+## git reflog
+记录每一次命令
+## git reset
+https://www.jianshu.com/p/c2ec5f06cf1a by carway
+```bash
+#reset --hard：完全放弃工作区，暂存区更改
+$ git reset --hard HEAD^
+#reset --soft：合并commit
+$ git reset --soft HEAD^
+#reset mixed：1. unstage 2. 修改commit错误
+$ git reset HEAD     #1. unstage
+
+$ git reset HEAD^    #2. reset, then delete sth.
+$ git commit ...     #submit correct
+```
+reset实质是移动HEAD，捎带所指branch
+
+- --hard：重置位置的同时，直接将 **working Tree工作目录**、 **index 暂存区**及 **repository** 都重置成目标**Reset**节点的內容,所以效果看起来等同于清空暂存区和工作区。
+
+- --soft：重置位置的同时，保留**working Tree工作目录**和**index暂存区**的内容，只让**repository**中的内容和 **reset**目标节点保持一致，因此**原节点**和**reset**节点之间的 **【差异变更集】** 会放入 **index暂存区中(Staged files)** 。所以效果看起来就是工作目录的内容不变，暂存区原有的内容也不变，只是**原节点和Reset节点之间的所有差异都会放到暂存区中。**
+
+- --mixed：重置位置的同时，只保留**Working Tree工作目录**的內容，但会将 **Index暂存区** 和 **Repository** 中的內容更改和**reset目标节点**一致，因此**原节点**和**Reset节点**之间的 **【差异变更集】** 会放入**Working Tree工作目录**中。所以效果看起来就是**原节点和Reset节点之间的所有差异都会放到工作目录中。**
+
+## git checkout -- [file]
+- 丢弃工作区working tree的修改，回到add前状态
+- 注意 -- [file]
+
+## git rm
+```bash
+$ git rm [file]            #从stages和working tree同时删除
+$ git rm --cached [file]   #从stage删除
+$ git rm -r dir            #删除文件夹
+
+#与rm [file]区别：rm仅删除working tree
+```
+
 # Branches
-## git branch [branch_name]
-new branch
+## git branch
+```bash
+$ git branch [branch_name]    # new branch
+$ git branch                  # 查看当前branch
+$ git branch -d [branch_name] # 删除branch
+$ git branch -D [branch_name] # 强制删除branch
+```
 ## git checkout [branch_name]
-goto that branch, * means which branch on
-### git checkout -b [branch_name]
-# 合并分支
+```bash
+$ git checkout -b [branch_name]  # 新建branch 同时跳转
+$ git checkout [branch_name]     # 跳转
+```
+switch to that branch, * means which branch on
+## git switch 
+```bash
+$ git switch [branch_name]          #  切换分支
+$ git switch -c [branch_name]       #  创建并切换分支
+```
+
+# 分支管理
 ## git merge [branch]
-创造下一新节点，为以上两个共同连接，[branch] is not currently on
-当前* branch会向下一节点，指向源节点与[branch] 的节点
+```bash
+# 直接merge，有时有冲突需解决
+$ git merge [branch]
+# 为merge操作创建commit
+$ git merge --no-ff -m "merge with no-ff" [branch] 
+```
+分支管理：
+- master用于发布稳定
+- dev用于开发
+- 个人branch，提交到dev
+## git stash
+```bash
+$ git stash       #保存当前现场（使得status clean）
+$ git stash list  #查看保留的现场
+$ git stash pop   #恢复现场，同时删除stash
+$ git stash apply #恢复现场
+$ git stash drop  #删除stash
+```
+## git cherry-pick
+```bash
+$ git cherry-pick [commit] #把bug提交复制到当前分支
+```
 ## git rebase [branch]
 创造新结点，复制本节点修改，线性拼接到另一[branch]节点（只连接这一节点）
+
+# 多人协作
+clone之后，origin/master与本地master自动对应
+## 本地创建和远程对应分支
+```bash
+$ git checkout -b branch-name origin/branch-name
+```
+## 设置其他branch对应
+```bash
+$ git branch --set-upstream-to=origin/dev dev
+```
