@@ -213,5 +213,36 @@ $ declare [-aixr] variable
 |command < file|读取file中命令并执行|
 |command >> file|执行command，追加写入file|
 
-## 管道指令
-//TODO
+## [管道指令](https://www.jianshu.com/p/9c0c2b57cb73)
+### 命令执行控制
+```bash
+command;command;command;    #顺序执行
+which command1 && command2     #如果1成功执行2
+which command1 || command2      #如果1不成功执行2
+```
+### 管道命令
+- 通常用于进程间的通信，前面每一个进程的输出（stdout）直接作为下一个进程的输入（stdin）
+- 以 `|` 为界定
+#### 1. 选取命令 cut
+- 从每一行选取部分，标准输出
+```bash
+#用分隔符分割后取范围
+cut -f 范围 -d '分隔符' file
+#用取字符范围
+cut -c 字符范围 file
+
+--complement 取反
+
+#范围实例:
+1,2 #第1与2部分
+1-3 #1到3部分
+-2  #从头到2
+2-  #2到结尾
+```
+#### 2. 选取命令grep
+- 取出一行，若该行满足需要信息
+```bash
+
+```
+
+## [查看控制进程](https://baijiahao.baidu.com/s?id=1617448120776344096&wfr=spider&for=pc)
